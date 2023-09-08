@@ -8,10 +8,10 @@ class Myfooter extends Component {
           <div className="col-6 offset-3">
             <div className="row">
               <div className="col col-12 d-flex justify-content-start align-items-center mb-2">
-                <i class="fab fa-facebook-square footer-icon"></i>
-                <i class="fab fa-instagram footer-icon"></i>
-                <i class="fab fa-twitter footer-icon"></i>
-                <i class="fab fa-youtube footer-icon"></i>
+                <i className="fab fa-facebook-square footer-icon"></i>
+                <i className="fab fa-instagram footer-icon"></i>
+                <i className="fab fa-twitter footer-icon"></i>
+                <i className="fab fa-youtube footer-icon"></i>
               </div>
             </div>
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg 4">
