@@ -15,7 +15,6 @@ class MyCards extends Component {
   };
 
   fetchFilms = async () => {
-    console.log("funziona");
     const URL = "http://www.omdbapi.com/?apikey=4ed6bf96&s=" + this.props.film;
     try {
       const response = await fetch(URL);
