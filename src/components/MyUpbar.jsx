@@ -3,9 +3,12 @@ import { Component } from "react";
 class MyUpbar extends Component {
   render() {
     return (
-      <div className="d-flex justify-content-between">
-        <div id="upbar-div-flex" className="d-flex">
-          <h2 className="mb-4">TV Shows</h2>
+      <div
+        className="d-flex justify-content-between align-items-center"
+        style={{ marginTop: "10px", marginBottom: "30px" }}
+      >
+        <div id="upbar-div-flex" className="d-flex align-items-center">
+          <h2>TV Shows</h2>
           <div className="dropdown ms-4 mt-1">
             <button
               className="btn btn-secondary btn-sm dropdown-toggle rounded-0"

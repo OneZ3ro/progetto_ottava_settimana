@@ -12,7 +12,7 @@ function App() {
       <MyNav />
       <main className="container-fluid px-4">
         <MyUpbar />
-        <h4>Trending Now</h4>
+        <h4 className="mb-3">Trending Now</h4>
         {/* row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-6 */}
         <div
           className="row mb-4 no-gutters text-center flex-nowrap"
@@ -20,14 +20,14 @@ function App() {
         >
           <MyCards film="food" />
         </div>
-        <h4>Watch it again</h4>
+        <h4 className="mb-3">Watch it again</h4>
         <div
           className="row mb-4 no-gutters text-center flex-nowrap"
           style={{ overflow: "hidden" }}
         >
           <MyCards film="high" />
         </div>
-        <h4>New Releases</h4>
+        <h4 className="mb-3">New Releases</h4>
         <div
           className="row mb-4 no-gutters text-center flex-nowrap"
           style={{ overflow: "hidden" }}
