@@ -111,3 +111,13 @@ body {
 .col img:hover {
   transform: scale(1.1);
 }
+
+@media screen and (max-width: 425px) {
+  #upbar-div-hide {
+    display: none !important;
+  }
+  #upbar-div-flex {
+    flex-grow: 1;
+    justify-content: space-between !important;
+  }
+}

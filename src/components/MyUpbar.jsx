@@ -4,7 +4,7 @@ class MyUpbar extends Component {
   render() {
     return (
       <div className="d-flex justify-content-between">
-        <div className="d-flex">
+        <div id="upbar-div-flex" className="d-flex">
           <h2 className="mb-4">TV Shows</h2>
           <div className="dropdown ms-4 mt-1">
             <button
@@ -34,7 +34,7 @@ class MyUpbar extends Component {
             </div>
           </div>
         </div>
-        <div>
+        <div id="upbar-div-hide">
           <i className="fa fa-th-large icons"></i>
           <i className="fa fa-th icons"></i>
         </div>

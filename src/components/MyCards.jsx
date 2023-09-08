@@ -18,8 +18,6 @@ class MyCards extends Component {
       const response = await fetch(URL);
       if (response.ok) {
         const parsebody = await response.json();
-        console.log(parsebody);
-        console.log(parsebody.Search);
         this.setState({ films: parsebody.Search });
       }
     } catch (error) {
@@ -29,8 +27,6 @@ class MyCards extends Component {
 
   componentDidMount = () => {
     this.fetchFilms();
-    console.log("Ha fatto didMount");
-    console.log(this.state.films);
   };
 
   render() {
