@@ -7,20 +7,44 @@ import { Component } from "react";
 // *?:        </div>
 
 class MyCards extends Component {
-  state = {};
+  state = {
+    films: [],
+  };
 
-  fetchFilms = () => {
+  fetchFilms = async () => {
     console.log("funziona");
+    const URL = "http://www.omdbapi.com/?apikey=4ed6bf96&s=" + this.props.film;
+    try {
+      const response = await fetch(URL);
+      if (response.ok) {
+        const parsebody = await response.json();
+        console.log(parsebody);
+        console.log(parsebody.Search);
+        this.setState({ films: parsebody.Search });
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   componentDidMount = () => {
     this.fetchFilms();
     console.log("Ha fatto didMount");
+    console.log(this.state.films);
   };
 
   render() {
     return (
-      <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-6 mb-4 no-gutters text-center"></div>
+      <>
+        {this.state.films === 0 && (
+          <div style={{ color: "white" }}>Non c'è nulla nello stato</div>
+        )}
+        {this.state.films.map((elem) => (
+          <div className="col-md-2 col-3 mb-2 px-1" key={elem.imdbID}>
+            <img className="img-fluid" src={elem.Poster} alt={elem.Title} />
+          </div>
+        ))}
+      </>
     );
   }
 }

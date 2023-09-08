@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import MyNav from "./components/MyNav";
 import MyUpbar from "./components/MyUpbar";
 import MyCards from "./components/MyCards";
+import Myfooter from "./MyFooter";
 
 function App() {
   return (
@@ -12,8 +13,29 @@ function App() {
       <main className="container-fluid px-4">
         <MyUpbar />
         <h4>Trending Now</h4>
-        <MyCards />
+        {/* row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-6 */}
+        <div
+          className="row mb-4 no-gutters text-center flex-nowrap"
+          style={{ overflow: "hidden" }}
+        >
+          <MyCards film="food" />
+        </div>
+        <h4>Watch it again</h4>
+        <div
+          className="row mb-4 no-gutters text-center flex-nowrap"
+          style={{ overflow: "hidden" }}
+        >
+          <MyCards film="high" />
+        </div>
+        <h4>New Releases</h4>
+        <div
+          className="row mb-4 no-gutters text-center flex-nowrap"
+          style={{ overflow: "hidden" }}
+        >
+          <MyCards film="zombie" />
+        </div>
       </main>
+      <Myfooter />
     </div>
   );
 }
