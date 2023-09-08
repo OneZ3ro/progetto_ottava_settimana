@@ -27,7 +27,11 @@ class MyNav extends Component {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div
+          className="collapse navbar-collapse"
+          id="navbarSupportedContent"
+          style={{ textAlign: "center" }}
+        >
           <ul className="navbar-nav me-auto">
             <li className="nav-item">
               <a className="nav-link font-weight-bold" href="#home">
@@ -55,8 +59,10 @@ class MyNav extends Component {
               </a>
             </li>
           </ul>
+          <div id="kids" style={{ fontWeight: "bold", padding: "8px" }}>
+            KIDS
+          </div>
           <i className="fa fa-search icons"></i>
-          <div id="kids">KIDS</div>
           <i className="fa fa-bell icons"></i>
           <i className="fa fa-user icons"></i>
         </div>
