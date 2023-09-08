@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Alert, Spinner } from "react-bootstrap";
 
 // *TODO: 1) Fare una fetch di qualcosa, prendere l'array che mi arriva e per ogni elemento (e/o al massimo 6)
 // *TODO:    visualizzare l'immagine del film
@@ -8,6 +9,8 @@ import { Component } from "react";
 
 class MyCards extends Component {
   state = {
+    hasError: false,
+    isLoading: true,
     films: [],
   };
 
@@ -18,7 +21,9 @@ class MyCards extends Component {
       const response = await fetch(URL);
       if (response.ok) {
         const parsebody = await response.json();
-        this.setState({ films: parsebody.Search });
+        this.setState({ films: parsebody.Search, isLoading: false });
+      } else {
+        this.setState({ hasError: true });
       }
     } catch (error) {
       console.log(error);
@@ -32,8 +37,13 @@ class MyCards extends Component {
   render() {
     return (
       <>
-        {this.state.films === 0 && (
-          <div style={{ color: "white" }}>Non c'è nulla nello stato</div>
+        {this.state.hasError && (
+          <Alert variant="danger">
+            Errore nella fetch. La preghiamo di ricaricare la pagina
+          </Alert>
+        )}
+        {this.state.isLoading && !this.state.hasError && (
+          <Spinner animation="border" variant="danger" />
         )}
         {this.state.films.map((elem) => (
           <div className="col-md-2 col-3 mb-2 px-1" key={elem.imdbID}>
